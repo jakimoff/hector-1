@@ -1,0 +1,39 @@
+.tabs {
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+    border-bottom: 1px solid $accent;
+
+    div {
+      padding: 0 42px 22px;
+      margin-right: 30px;
+      border-bottom: 6px solid transparent;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #878787;
+      cursor: pointer;
+      transition: border-color .3s ease, color .3s ease;
+
+      &.active {
+        color: $text;
+        border-bottom-color: $accent;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.tab {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

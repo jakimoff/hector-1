@@ -1,0 +1,51 @@
+.main-popup {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 45px 55px;
+  max-width: 700px;
+  border: 3px solid $accent;
+  background-color: #fff;
+
+  .mfp-close {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: -20px;
+    top: -20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid $accent;
+    opacity: 1;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+  }
+
+  form {
+    width: 100%;
+    max-width: 374px;
+    margin: 55px auto 0 auto;
+
+    .input-text {
+      margin-bottom: 25px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+
+    button {
+      margin-top: 50px;
+    }
+  }
+
+  .mfp-close {
+    
+  }
+}

@@ -1,0 +1,82 @@
+/* === DESKTOP FIRST === */
+
+/* xl <= Extra extra large (xxl) */
+
+@mixin media-max-xxl {
+  @media (max-width : 1400px) {
+    @content;
+  }
+}
+
+/* lg <= Extra large (xl) */
+@mixin media-max-xl {
+  @media (max-width : 1200px) {
+    @content;
+  }
+}
+
+/* md <= Large (lg) */
+@mixin media-max-lg {
+  @media (max-width : 992px) {
+    @content;
+  }
+}
+
+/* sm <= Medium (md) */
+@mixin media-max-md {
+  @media (max-width : 768px) {
+    @content;
+  }
+}
+
+/* xs <= Small (sm) */
+@mixin media-max-sm {
+  @media (max-width : 576px) {
+    @content;
+  }
+}
+
+
+/* === MOBILE FIRST === */
+
+/* Custom (xs) */
+@mixin media-xs {
+  @media (min-width : 0px) {
+    @content;
+  }
+}
+
+/* Small (sm) */
+@mixin media-sm {
+  @media (min-width : 576px) {
+    @content;
+  }
+}
+
+/* Medium (md) */
+@mixin media-md {
+  @media (min-width : 768px) {
+    @content;
+  }
+}
+
+/* Large (lg) */
+@mixin media-lg {
+  @media (min-width : 992px) {
+    @content;
+  }
+}
+
+/* Extra large (xl) */
+@mixin media-xl {
+  @media (min-width : 1200px) {
+    @content;
+  }
+}
+
+/* Extra extra large (xxl) */
+@mixin media-xxl {
+  @media (min-width : 1400px) {
+    @content;
+  }
+}

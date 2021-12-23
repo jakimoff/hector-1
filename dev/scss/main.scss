@@ -1,0 +1,72 @@
+/* RESPONSIVE */
+
+@import "media";
+
+/* LIBS */
+
+@import "libs";
+
+/* vars */
+
+$accent: #0F0F0F;
+$text: #0F0F0F;
+$regular-text: 16px;
+$line-height: 20px;
+$font: "montserrat-pr", sans-serif;
+$sprite: "../svg/dest/stack/sprite.svg#";
+
+
+/* fonts */
+
+@font-face { src: url("../fonts/Montserrat-Regular.ttf"); font-family: "montserrat-pr"; font-weight: 400; font-style: normal; }
+@font-face { src: url("../fonts/Montserrat-Light.ttf"); font-family: "montserrat-pr"; font-weight: 300; font-style: normal; }
+@font-face { src: url("../fonts/Montserrat-Bold.ttf"); font-family: "montserrat-pr"; font-weight: 600; font-style: normal; }
+@font-face { src: url("../fonts/Montserrat-ExtraBold.ttf"); font-family: "montserrat-pr"; font-weight: 600; font-style: normal; }
+@font-face { src: url("../fonts/Montserrat-Black.ttf"); font-family: "montserrat-pr"; font-weight: 900; font-style: normal; }
+
+/* ui elements */
+
+@import "ui/form";
+@import "ui/tabs";
+@import "ui/button";
+@import "ui/popup";
+
+/* modules */
+
+@import "modules/header";
+@import "modules/footer";
+
+/* sections */
+
+@import "sections/s-additional";
+@import "sections/s-new-products";
+@import "sections/s-trends";
+@import "sections/s-subscribe";
+
+/* General */
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $font;
+	font-size: $regular-text;
+	line-height: $line-height;
+	letter-spacing: 1px;
+	color: $text;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.container {
+	max-width: 100%;
+	padding: 0 80px;
+
+	@include media-xxl {
+		padding: 0 120px;
+	}
+}
