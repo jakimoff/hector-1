@@ -364,6 +364,15 @@
     overflow-y: auto;
     top: -60px;
   }
+
+  .products-list::-webkit-scrollbar {
+		width: 5px;
+		background-color: #CECECE;
+	}
+	
+	.products-list::-webkit-scrollbar-thumb {
+		background-color: #878787;
+	}
 }
 
 @keyframes showSearch {
