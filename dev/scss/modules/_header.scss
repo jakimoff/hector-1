@@ -229,12 +229,23 @@
   }
 
   &_white {
+    display: inline-block;
     position: static;
-    width: 176px;
-    height: 151px;
+    width: 110px;
+    height: 90px;
     background-size: cover;
     transform: none;
     background-image: url("#{$sprite}logo-white");
+
+    @include media-md {
+      width: 130px;
+      height: 110px;
+    }
+
+    @include media-xxxl {
+      width: 176px;
+      height: 151px;
+    }
   }
 
   &:hover {
@@ -714,13 +725,4 @@
     transform: scale(1);
     opacity: 1;
   }
-}
-
-section,
-footer {
-  display: none!important;
-}
-
-section.s-trends {
-  display: block!important;
 }
