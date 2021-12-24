@@ -268,7 +268,7 @@
     height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain;
+    background-size: 1496px auto;
     background-image: url("#{$sprite}slide-polygon");
 
     &:after {
@@ -284,5 +284,97 @@
       background-size: 737px auto;
       background-image: url("../images/slides/slide-1.png");
     }
+  }
+}
+
+.header-search {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 157px;
+
+  &.active {
+    display: block;
+    animation-name: showSearch;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+  }
+
+  &__maybe {
+    padding: 0 75px 0;
+    color: #B2B2B2;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 22px;
+  }
+
+  &__wrapper {
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0px 102px 124px rgba(#000, .25);
+
+    .input-text {
+      padding: 20px 75px 0;
+      position: relative;
+      z-index: 40;
+
+      input {
+        width: 100%;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        padding-left: 55px;
+        border-bottom: 1px solid #878787;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 50px;
+        background-image: url("#{$sprite}search-gray");
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 100;
+    right: 15px;
+    top: 15px;
+    width: 23px;
+    height: 23px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("#{$sprite}close-popup");
+    cursor: pointer;
+    transition: opacity .3s ease;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__list {
+    padding-right: 21px;
+  }
+
+  .products-list {
+    padding: 20px 54px 40px 75px;
+    position: relative;
+    max-height: 700px;
+    overflow-y: auto;
+    top: -60px;
+  }
+}
+
+@keyframes showSearch {
+
+  0%{
+    transform: scale(.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

@@ -28,6 +28,31 @@
       }
     }
   }
+
+  &_popup {
+
+    .tabs__nav {
+      width: 100%;
+      border-bottom: 0;
+      justify-content: space-between;
+
+      .tab-link {
+        width: calc(50% - 10px);
+        padding: 22px 15px;
+        margin-right: 0;
+        text-align: center;
+        border: 3px solid $accent;
+        color: $accent;
+        background-color: #fff;
+        transition: background-color .3s ease, color .3s ease;
+
+        &.active {
+          color: #fff;
+          background-color: $accent;
+        }
+      }
+    }
+  }
 }
 
 .tab {

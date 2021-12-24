@@ -1,11 +1,46 @@
 .main-popup {
   position: relative;
-  width: 100%;
-  margin: 0 auto;
-  padding: 45px 55px;
   max-width: 700px;
-  border: 3px solid $accent;
-  background-color: #fff;
+  margin: 15px auto;
+  
+  &__content {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    padding: 45px 55px;
+    border: 3px solid $accent;
+    background-color: #fff;
+
+    &_remind {
+      padding: 0;
+    }
+  }
+
+  &_remind {
+    max-width: 500px;
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: -1;
+    left: -58px;
+    top: -67px;
+    width: 116px;
+    height: 134px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("#{$sprite}popup-logo");
+
+    &_small {
+      left: auto;
+      top: auto;
+      right: -29px;
+      bottom: -39px;
+      width: 68px;
+      height: 78px;
+    }
+  }
 
   .mfp-close {
     position: absolute;
@@ -20,7 +55,13 @@
     font-size: 0;
     background-repeat: no-repeat;
     background-position: center;
-    
+    background-size: 32px;
+    background-image: url("#{$sprite}close-popup");
+    transition: transform .3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   form {
@@ -45,7 +86,56 @@
     }
   }
 
-  .mfp-close {
-    
+  &__title {
+    padding: 22px 0;
+    background-color: $accent;
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #fff;
   }
+
+  form {
+    max-width: 484px;
+    margin-top: 0;
+    padding: 45px 55px;
+  }
+}
+
+.mfp-bg {
+  background-color: #fff;
+  opacity: 1;
+}
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: all .5s ease-out;
+}
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 1;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  transition: all .5s ease-out;
+}
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
 }

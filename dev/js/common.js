@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	initSlider()
 	initMenu()
 	initPopup()
+	initSearch()
 
 	// $("select").niceSelect()
 
@@ -64,7 +65,27 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		$('.open-popup-link').magnificPopup({
 			type:'inline',
-			midClick: true
+			midClick: true,
+			mainClass: 'mfp-fade'
 		})
+	}
+
+	function initSearch() {
+
+		let headerSearch = $(".header-search")
+		let closeSearch = $(".header-search__close")
+		let b = $("body")
+
+		$(".header-ui__search").on("click", function(e){
+			e.preventDefault()
+			headerSearch.addClass("active")
+			b.addClass("unscroll")
+		})
+
+		closeSearch.on("click", function(){
+			headerSearch.removeClass("active")
+			b.removeClass("unscroll")
+		})
+
 	}
 })

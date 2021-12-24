@@ -24,11 +24,16 @@
     margin-right: 50px;
     margin-left: auto;
 
-    span {
+    a {
       display: inline-block;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      transition: opacity .25s ease;
+
+      &:hover {
+        opacity: .7;
+      }
 
       &.vb {
         width: 53px;
