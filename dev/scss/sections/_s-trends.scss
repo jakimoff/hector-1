@@ -1,17 +1,38 @@
 .s-trends {
-  padding: 80px 0;
+  padding: 35px 0;
   background-color: #F5F5F5;
+
+  @include media-md {
+    padding: 80px 0;
+  }
 }
 
 .trends-items {
   display: flex;
   justify-content: space-between;
-  margin-top: 65px;
+  flex-direction: column;
+  margin-top: 35px;
+
+  @include media-lg {
+    margin-top: 65px;
+    flex-direction: row;
+  }
 }
 
 .trends-item {
+  display: flex;
   position: relative;
   flex: 0 0 calc(50% - 30px);
+  min-height: 260px;
+  margin-bottom: 15px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include media-lg {
+    margin-bottom: 0;
+  }
 
   &:hover {
 
@@ -19,15 +40,19 @@
       background-color: rgba(#000, .9);
 
       p {
-        max-height: 44px;
+        max-height: none;
+
+        @include media-md {
+          max-height: 44px;
+        }
       }
     }
   }
 
   &__image {
+    height: 100%;
 
     img {
-      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -40,37 +65,52 @@
     right: 0;
     top: 0;
     bottom: 0;
-
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 100%;
     background-color: rgba(#000, .5);
-
     text-align: center;
     transition: background-color .3s ease;
 
     h3 {
-      font-size: 36px;
-      line-height: 44px;
+      font-size: 21px;
+      line-height: 24px;
       color: #fff;
       font-weight: 700;
       max-width: 550px;
-      margin: 0 auto;
+      margin: 10px auto;
+
+      @include media-lg {
+        margin: 0 auto;
+        font-size: 24px;
+        line-height: 38px;
+      }
+
+      @include media-xl {
+        font-size: 36px;
+        line-height: 44px;
+      }
     }
 
     p {
       max-width: 470px;
-      font-size: 18px;
-      line-height: 22px;
+      font-size: 14px;
+      line-height: 18px;
       color: #fff;
-      margin-top: 20px;
+      margin-top: 5px;
       max-height: 0;
       overflow: hidden;
       transition: max-height .3s ease;
+
+      @include media-md {
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: 20px;
+      }
     }
   }
 }

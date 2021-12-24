@@ -52,13 +52,18 @@
   }
 
   &_outline-white {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-weight: 400;
     background-color: transparent;
     border: 1px solid #fff;
     color: #fff;
     transition: background-color .3s ease, color .3s ease, transform .3s ease;
+
+    @include media-lg {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
 
     &:hover {
       opacity: 1;

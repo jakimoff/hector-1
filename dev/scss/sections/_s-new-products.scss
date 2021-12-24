@@ -1,5 +1,13 @@
 .s-new-products {
-  padding: 95px 0;
+  padding: 30px 0;
+
+  @include media-md {
+    padding: 45px 0;
+  }
+
+  @include media-lg {
+    padding: 95px 0;
+  }
 }
 
 .products-list {
@@ -28,6 +36,10 @@
 
   @include media-md {
     flex: 0 0 calc(33.3333% - 15px);
+  }
+
+  @include media-lg {
+    flex: 0 0 calc(25% - 15px);
   }
 
   @include media-xl {
@@ -178,10 +190,18 @@
 }
 
 .button-wrap {
-  margin-top: 90px;
+  margin-top: 30px;
   text-align: center;
 
+  @include media-md {
+    margin-top: 90px;
+  }
+
   &_trends {
-    margin-top: 60px;
+    margin-top: 30px;
+
+    @include media-lg {
+      margin-top: 60px;
+    }
   }
 }

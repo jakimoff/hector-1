@@ -2,17 +2,19 @@
 
   &__nav {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     width: max-content;
     margin: 0 auto;
     border-bottom: 1px solid $accent;
+    overflow-x: auto;
+    max-width: 100%;
 
     div {
-      padding: 0 42px 22px;
-      margin-right: 30px;
+      padding: 0 15px 15px;
       border-bottom: 6px solid transparent;
       font-weight: 600;
+      white-space: nowrap;
       font-size: 14px;
       line-height: 18px;
       color: #878787;
@@ -20,11 +22,14 @@
       transition: border-color .3s ease, color .3s ease;
 
       @include media-md {
+        padding: 0 20px 20px;
         font-size: 16px;
         line-height: 20px;
       }
 
       @include media-lg {
+        margin-right: 30px;
+        padding: 0 42px 22px;
         font-size: 18px;
         line-height: 22px;
       }
@@ -46,6 +51,7 @@
       width: 100%;
       border-bottom: 0;
       justify-content: space-between;
+      flex-wrap: wrap;
 
       .tab-link {
         width: 100%;
