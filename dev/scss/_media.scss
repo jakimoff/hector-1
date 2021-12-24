@@ -3,6 +3,12 @@
 /* xl <= Extra extra large (xxl) */
 
 @mixin media-max-xxl {
+  @media (max-width : 1919px) {
+    @content;
+  }
+}
+
+@mixin media-max-xxl {
   @media (max-width : 1400px) {
     @content;
   }
@@ -46,6 +52,13 @@
   }
 }
 
+/* Custom (s) */
+@mixin media-s {
+  @media (min-width : 375px) {
+    @content;
+  }
+}
+
 /* Small (sm) */
 @mixin media-sm {
   @media (min-width : 576px) {
@@ -77,6 +90,22 @@
 /* Extra extra large (xxl) */
 @mixin media-xxl {
   @media (min-width : 1400px) {
+    @content;
+  }
+}
+
+/* Extra extra large (xxxl) */
+
+@mixin media-xxxl {
+  @media (min-width : 1680px) {
+    @content;
+  }
+}
+
+/* Extra extra large (hd) */
+
+@mixin media-hd {
+  @media (min-width : 1920px) {
     @content;
   }
 }

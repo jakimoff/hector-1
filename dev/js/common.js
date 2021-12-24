@@ -47,6 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		})
 
+		let ww = $(window).width()
+
+		if(ww < 1920) {
+			initMobMenu()
+		}
+
 	}
 
 	function initTabs() {
@@ -87,5 +93,20 @@ document.addEventListener('DOMContentLoaded', function() {
 			b.removeClass("unscroll")
 		})
 
+	}
+
+	function initMobMenu() {
+		let burger = $(".header-nav__burger")
+		let menu = $(".header-menu")
+		burger.on("click", function(){
+
+			if($(this).hasClass("active")) {
+				$(this).removeClass("active")
+				menu.fadeOut(500)
+			} else {
+				$(this).addClass("active")
+				menu.fadeIn(500)
+			}
+		})
 	}
 })

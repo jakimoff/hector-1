@@ -68,9 +68,17 @@ body {
 
 .container {
 	max-width: 100%;
-	padding: 0 80px;
+	padding: 0 15px;
 
-	@include media-xxl {
+	@include media-lg {
+		padding: 0 30px;
+	}
+
+	@include media-xxxl {
+		padding: 0 80px;
+	}
+
+	@include media-hd {
 		padding: 0 120px;
 	}
 }
