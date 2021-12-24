@@ -3,6 +3,7 @@
   &__nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     width: max-content;
     margin: 0 auto;
     border-bottom: 1px solid $accent;
@@ -12,11 +13,21 @@
       margin-right: 30px;
       border-bottom: 6px solid transparent;
       font-weight: 600;
-      font-size: 18px;
-      line-height: 22px;
+      font-size: 14px;
+      line-height: 18px;
       color: #878787;
       cursor: pointer;
       transition: border-color .3s ease, color .3s ease;
+
+      @include media-md {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      @include media-lg {
+        font-size: 18px;
+        line-height: 22px;
+      }
 
       &.active {
         color: $text;
@@ -37,14 +48,25 @@
       justify-content: space-between;
 
       .tab-link {
-        width: calc(50% - 10px);
-        padding: 22px 15px;
+        width: 100%;
+        padding: 15px 10px;
         margin-right: 0;
         text-align: center;
         border: 3px solid $accent;
         color: $accent;
         background-color: #fff;
         transition: background-color .3s ease, color .3s ease;
+        margin-bottom: 10px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        @include media-md {
+          margin-bottom: 0;
+          padding: 22px 15px;
+          width: calc(50% - 10px);
+        }
 
         &.active {
           color: #fff;

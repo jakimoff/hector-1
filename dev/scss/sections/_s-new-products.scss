@@ -10,9 +10,33 @@
 
 .product {
   position: relative;
-  flex: 0 0 calc(25% - 15px);
-  margin-top: 96px;
+  flex: 0 0 100%;
+  margin-top: 30px;
   overflow: hidden;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  @include media-sm {
+    flex: 0 0 calc(50% - 15px);
+
+    &:first-of-type {
+      margin-top: 30px;
+    }
+  }
+
+  @include media-md {
+    flex: 0 0 calc(33.3333% - 15px);
+  }
+
+  @include media-xl {
+    margin-top: 96px;
+
+    &:first-of-type {
+      margin-top: 96px;
+    }
+  }
 
   &__badge {
     display: block;
@@ -33,6 +57,12 @@
   }
 
   &__image {
+    max-height: 300px;
+    overflow: hidden;
+
+    @include media-sm {
+      max-height: none;
+    }
 
     img {
       display: block;
@@ -52,13 +82,18 @@
 
     span {
       display: inline-block;
-      width: 26px;
-      height: 26px;
+      width: 18px;
+      height: 18px;
       margin-right: 5px;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
       background-image: url("#{$sprite}star-full");
+
+      @include media-md {
+        width: 26px;
+        height: 26px;
+      }
 
       &:last-of-type {
         margin-right: 0;
@@ -81,10 +116,20 @@
     span {
       display: inline-block;
       margin: 0 0 0 3px;
-      font-size: 22px;
-      line-height: 27px;
+      font-size: 18px;
+      line-height: 21px;
       color: #CECECE;
       cursor: pointer;
+
+      @include media-md {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      @include media-lg {
+        font-size: 22px;
+        line-height: 27px;
+      }
 
       &:first-of-type {
         margin-left: 0;
@@ -97,16 +142,37 @@
   }
 
   &__desc {
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 0;
+
+    @include media-md {
+      font-size: 16px;
+    }
   }
 
   &__price {
-    margin-top: 25px;
-    font-size: 30px;
-    line-height: 37px;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 22px;
     letter-spacing: 2px;
     font-weight: 600;
+
+    @include media-md {
+      margin-top: 15px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include media-lg {
+      font-size: 24px;
+      line-height: 26px;
+      margin-top: 25px;
+    }
+
+    @include media-xl {
+      font-size: 30px;
+      line-height: 37px;
+    }
   }
 
 }

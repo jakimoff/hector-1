@@ -15,10 +15,20 @@
     padding: 15px 0;
     min-height: 40px;
     transition: all .25s ease;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 14px;
+    line-height: 18px;
     color: $accent;
     font-weight: 700;
+
+    @include media-md {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include media-lg {
+      font-size: 18px;
+      line-height: 22px;
+    }
 
     &:focus {
       outline: none;
@@ -92,11 +102,21 @@
 .remind-pass {
   display: block;
   width: max-content;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 18px;
   color: #878787;
   margin: 17px auto 0 auto;
   transition: color .3s ease;
+
+  @include media-md {
+    font-size: 16px;
+    line-height: 20x;
+  }
+
+  @include media-lg {
+    font-size: 18px;
+    line-height: 22px;
+  }
 
   &:hover {
     color: $accent;

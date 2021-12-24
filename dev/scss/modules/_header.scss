@@ -559,7 +559,12 @@
   display: none;
   position: absolute;
   left: 0;
-  top: 157px;
+  top: 70px;
+  z-index: 10;
+
+  @include media-md {
+    top: 157px;
+  }
 
   &.active {
     display: block;
@@ -570,11 +575,28 @@
   }
 
   &__maybe {
-    padding: 0 75px 0;
+    padding: 0 25px 0;
     color: #B2B2B2;
-    font-size: 20px;
-    line-height: 24px;
-    margin-top: 22px;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 14px;
+
+    @include media-sm {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include media-md {
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 22px;
+    }
+
+    @include media-lg {
+      font-size: 20px;
+      line-height: 24px;
+      padding: 0 75px 0;
+    }
   }
 
   &__wrapper {
@@ -583,21 +605,37 @@
     box-shadow: 0px 102px 124px rgba(#000, .25);
 
     .input-text {
-      padding: 20px 75px 0;
+      padding: 10px 25px 0;
       position: relative;
       z-index: 40;
+
+      @include media-lg {
+        padding: 20px 75px 0;
+      }
 
       input {
         width: 100%;
         font-weight: 400;
-        font-size: 24px;
-        line-height: 29px;
-        padding-left: 55px;
+        font-size: 14px;
+        line-height: 20px;
+        padding-left: 35px;
         border-bottom: 1px solid #878787;
         background-repeat: no-repeat;
         background-position: left center;
-        background-size: 50px;
+        background-size: 30px;
         background-image: url("#{$sprite}search-gray");
+
+        @include media-md {
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        @include media-lg {
+          font-size: 24px;
+          line-height: 29px;
+          padding-left: 55px;
+          background-size: 50px;
+        }
       }
     }
   }
@@ -607,8 +645,8 @@
     z-index: 100;
     right: 15px;
     top: 15px;
-    width: 23px;
-    height: 23px;
+    width: 18px;
+    height: 18px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -616,21 +654,43 @@
     cursor: pointer;
     transition: opacity .3s ease;
 
+    @include media-lg {
+      width: 23px;
+      height: 23px;
+    }
+
     &:hover {
       opacity: .7;
     }
   }
 
   &__list {
-    padding-right: 21px;
+    padding-right: 11px;
+
+    @include media-lg {
+      padding-right: 21px;
+    }
   }
 
   .products-list {
-    padding: 20px 54px 40px 75px;
+    padding: 15px 6px 20px 25px;
     position: relative;
-    max-height: 700px;
+    max-height: 460px;
     overflow-y: auto;
-    top: -60px;
+    top: 0;
+
+    @include media-sm {
+      max-height: 540px;
+    }
+
+    @include media-lg {
+      max-height: 700px;
+      padding: 20px 46px 40px 75px;
+    }
+
+    .product {
+      margin-top: 30px;
+    }
   }
 
   .products-list::-webkit-scrollbar {
