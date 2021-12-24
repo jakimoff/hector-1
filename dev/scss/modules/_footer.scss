@@ -288,6 +288,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
   padding: 25px 0;
 
@@ -297,6 +298,7 @@
   }
 
   p {
+    text-align: center;
     margin-bottom: 0;
     color: rgba(#fff, .25);
   }
@@ -319,6 +321,7 @@
 
     @include media-sm {
       display: flex;
+      width: auto;
     }
 
     @include media-xxl {
@@ -356,6 +359,7 @@
 .footer-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: rgba(#fff, .25);
   text-decoration: none;
   transition: color .3s ease;
