@@ -275,13 +275,13 @@
     background-size: 30px;
     margin-left: 4px;
 
+    &:first-of-type {
+      margin-left: 0;
+    }
+
     @include media-sm {
       background-size: 40px;
       margin-left: 30px;
-    }
-
-    &:first-of-type {
-      margin-left: 0;
     }
 
     @include media-xxl {

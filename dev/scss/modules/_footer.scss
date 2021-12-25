@@ -36,10 +36,6 @@
     margin-bottom: 40px;
   }
 
-  @include media-xl {
-
-  }
-
   @include media-xxl {
     margin-bottom: 0;
     text-align: left; 
@@ -135,6 +131,7 @@
     }
 
     @include media-xxxl {
+
       ul {
         li {
           width: auto;
@@ -160,6 +157,7 @@
     }
 
     @include media-lg {
+      
       ul li {
         width: 100%;
       }
