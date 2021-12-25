@@ -44,7 +44,7 @@ function scripts() {
         'dev/libs/jquery/jquery-3.6.0.min.js',
         'dev/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
         'dev/libs/slick-carousel/slick/slick.min.js',
-        'dev/libs/jquery-nice-select/js/jquery.nice-select.min.js',
+        // 'dev/libs/jquery-nice-select/js/jquery.nice-select.min.js',
         'dev/js/common.js'
           ])
          .pipe(concat('app.min.js'))
@@ -67,10 +67,10 @@ function svgsprite() {
 
 function build() {
   return src([
-            'dev/css/**/*.min.css',
-            'dev/js/**/*.min.js',
+            'dev/css/main.min.css',
+            'dev/js/app.min.js',
             'dev/images/**/*',
-            'dev/svg/**/*',
+            'dev/svg/dest/stack/sprite.svg',
             'dev/fonts/**/*',
             'dev/*.html'
           ], { base: 'dev' })
@@ -90,7 +90,7 @@ exports.styles = styles
 exports.scripts = scripts
 exports.startwatch = startwatch
 exports.svgsprite = svgsprite
-exports.build = series(styles, scripts, build)
+exports.build = series(styles, scripts, svgsprite, build)
 
 // --- //
 
