@@ -59,11 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		let tabsLink =	$(".tabs__nav .tab-link")
 		let tabs = $(".tabs .tab")
 		tabsLink.on("click", function(){
-			let num = $(this).data("tab")
-			$(this).parent().find(".active").removeClass("active")
-			$(this).parent().parent().find(".tab.active").fadeOut(0).removeClass("active")
-			$(this).addClass("active")
-			$(this).parent().parent().find(".tab[data-tab-item='" + num + "']").fadeIn(400).addClass("active")
+			if(!$(this).hasClass("active")) {
+				let num = $(this).data("tab")
+				$(this).parent().find(".active").removeClass("active")
+				$(this).parent().parent().find(".tab.active").fadeOut(0).removeClass("active")
+				$(this).addClass("active")
+				$(this).parent().parent().find(".tab[data-tab-item='" + num + "']").fadeIn(400).addClass("active")
+			}
 		})
 	}
 
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	function initMobMenu() {
 		let burger = $(".header-nav__burger")
 		let menu = $(".header-menu")
+		let menuLink = $(".header-menu a")
 		burger.on("click", function(){
 
 			if($(this).hasClass("active")) {
@@ -108,5 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
 				menu.fadeIn(500)
 			}
 		})
+
+		$(document).on("click", e => {
+			if (!menuLink.is(e.target) 
+			&& menuLink.has(e.target).length === 0)
+			{
+				menu.removeClass('active');
+		 }
+		});
 	}
 })

@@ -11,10 +11,8 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin-top: 35px;
 
   @include media-lg {
-    margin-top: 65px;
     flex-direction: row;
   }
 }

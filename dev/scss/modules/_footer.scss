@@ -301,20 +301,54 @@
     text-align: center;
     margin-bottom: 0;
     color: rgba(#fff, .25);
+    font-size: 14px;
+
+    @include media-sm {
+      font-size: 16px;
+    }
   }
 
   ul {
     margin: 15px 0;
 
     li {
+      position: relative;
       width: max-content;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      margin: 0 auto 10px;
 
-      @include media-sm {
-        margin-bottom: 0;
+      &:first-of-type {
+        
+        @include media-sm {
+          margin-right: 15px;
+          padding-right: 15px;
+          border-right: 1px solid rgba(#fff, .25);
+        }
       }
 
       &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      a {
+        display: inline-block;
+        color: rgba(#fff, .25);
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(#fff, .25);
+        transition: color .3s ease, border-color .3s ease;
+        font-size: 14px;
+
+        @include media-sm {
+          font-size: 16px;
+        }
+
+        &:hover {
+          color: #fff;
+          border-bottom: 1px dashed #fff;
+        }
+      }
+
+      @include media-sm {
         margin-bottom: 0;
       }
     }
@@ -327,32 +361,6 @@
     @include media-xxl {
       margin: 0;
     }
-
-    li {
-      position: relative;
-
-      &:first-of-type {
-        
-        @include media-sm {
-          margin-right: 15px;
-          padding-right: 15px;
-          border-right: 1px solid rgba(#fff, .25);
-        }
-      }
-
-      a {
-        display: inline-block;
-        color: rgba(#fff, .25);
-        text-decoration: none;
-        border-bottom: 1px dashed rgba(#fff, .25);
-        transition: color .3s ease, border-color .3s ease;
-
-        &:hover {
-          color: #fff;
-          border-bottom: 1px dashed #fff;
-        }
-      }
-    }
   }
 }
 
@@ -363,6 +371,11 @@
   color: rgba(#fff, .25);
   text-decoration: none;
   transition: color .3s ease;
+  font-size: 14px;
+
+  @include media-md {
+    font-size: 16px;
+  }
 
   &:hover {
     color: #fff;
@@ -373,10 +386,14 @@
     content: "";
     width: 91px;
     height: 36px;
-    margin-left: 20px;
+    margin-left: 8px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-image: url("#{$sprite}second-logo");
+
+    @include media-sm {
+      margin-left: 20px;
+    }
   }
 }

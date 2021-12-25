@@ -11,43 +11,34 @@
 }
 
 .products-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  
+  @include media-sm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+
+  @include media-md {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include media-xl {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 96px 30px;
+  }
 }
 
 .product {
   position: relative;
-  flex: 0 0 100%;
   margin-top: 30px;
   overflow: hidden;
 
-  &:first-of-type {
+  @include media-sm {
     margin-top: 0;
   }
 
-  @include media-sm {
-    flex: 0 0 calc(50% - 15px);
-
-    &:first-of-type {
-      margin-top: 30px;
-    }
-  }
-
-  @include media-md {
-    flex: 0 0 calc(33.3333% - 15px);
-  }
-
-  @include media-lg {
-    flex: 0 0 calc(25% - 15px);
-  }
-
-  @include media-xl {
-    margin-top: 96px;
-
-    &:first-of-type {
-      margin-top: 96px;
-    }
+  &:first-of-type {
+    margin-top: 0;
   }
 
   &__badge {
@@ -102,7 +93,7 @@
       background-size: cover;
       background-image: url("#{$sprite}star-full");
 
-      @include media-md {
+      @include media-lg {
         width: 26px;
         height: 26px;
       }
@@ -132,11 +123,6 @@
       line-height: 21px;
       color: #CECECE;
       cursor: pointer;
-
-      @include media-md {
-        font-size: 20px;
-        line-height: 24px;
-      }
 
       @include media-lg {
         font-size: 22px;

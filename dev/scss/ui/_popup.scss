@@ -83,7 +83,7 @@
     width: 100%;
     max-width: 484px;
     margin-top: 0;
-    padding: 25px 20px;
+    padding: 25px 10px;
     margin: 0 auto;
 
     @include media-md {
@@ -107,6 +107,9 @@
     }
 
     button {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
       margin-top: 25px;
 
       @include media-md {
@@ -127,7 +130,7 @@
     color: #fff;
 
     @include media-md {
-      padding: 15px 0;
+      padding: 25px 0;
       font-size: 18px;
       line-height: 22px;
     }
