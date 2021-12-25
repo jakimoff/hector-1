@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	initPopup()
 	initSearch()
 
-	// $("select").niceSelect()
-
 	function initSlider() {
 
 		$(".header-slider").on("init", function(event, slick) {
@@ -55,6 +53,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	}
 
+	function initMobMenu() {
+		let burger = $(".header-nav__burger")
+		let menu = $(".header-menu")
+
+		burger.on("click", function(){
+
+			if($(this).hasClass("active")) {
+				$(this).removeClass("active")
+				menu.fadeOut(500)
+			} else {
+				$(this).addClass("active")
+				menu.fadeIn(500)
+			}
+		})
+
+		$(window).click(function() {
+			burger.removeClass("active")
+			menu.fadeOut(500)
+		});
+
+		$(".header-menu a, .header-nav__burger").on("click", function(event){
+			event.stopPropagation()
+		})
+	}
+
 	function initTabs() {
 		let tabsLink =	$(".tabs__nav .tab-link")
 		let tabs = $(".tabs .tab")
@@ -95,29 +118,5 @@ document.addEventListener('DOMContentLoaded', function() {
 			b.removeClass("unscroll")
 		})
 
-	}
-
-	function initMobMenu() {
-		let burger = $(".header-nav__burger")
-		let menu = $(".header-menu")
-		let menuLink = $(".header-menu a")
-		burger.on("click", function(){
-
-			if($(this).hasClass("active")) {
-				$(this).removeClass("active")
-				menu.fadeOut(500)
-			} else {
-				$(this).addClass("active")
-				menu.fadeIn(500)
-			}
-		})
-
-		$(document).on("click", e => {
-			if (!menuLink.is(e.target) 
-			&& menuLink.has(e.target).length === 0)
-			{
-				menu.removeClass('active');
-		 }
-		});
 	}
 })
